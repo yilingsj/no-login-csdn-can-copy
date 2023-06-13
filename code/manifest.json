@@ -1,0 +1,31 @@
+{
+  "name":"移除某sdn复制限制v0.1-艺灵",
+  "description": "在不登录某sdn网站的情况下,也可正常复制文章内容和代码块里面的内容哟~",
+  "version": "0.1",
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' object-src 'self'",
+  "permissions": [
+    "tabs"
+    ,"https://*.csdn.net/*"
+    ,"contextMenus"
+  ],
+  "icons": {
+          "16": "icon16.png"
+          ,"48": "icon48.png"
+          ,"128": "icon128.png"
+        },
+  "page_action":{
+    "default_title":"移除某sdn复制限制v0.1-艺灵 www.yilingsj.com"
+    ,"default_icon": "icon16.png"
+  },
+	"content_scripts":[{
+    "matches":[
+      "https://*.csdn.net/*"
+    ]
+    ,"js": ["page/popup.js"
+    ]
+   	,"css": []
+    ,"run_at": "document_end"
+  }]
+
+}
